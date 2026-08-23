@@ -4,16 +4,16 @@ plugins {
 
 android {
     namespace = "com.odoo"
-    compileSdk = 35
+    compileSdk = providers.gradleProperty("COMPILE_SDK_VERSION").get().toInt()
 
     defaultConfig {
         useLibrary("org.apache.http.legacy")
         manifestPlaceholders["applicationName"] = "Odoo"
         applicationId = "com.odoo"
-        minSdk = 21
-        targetSdk = 35
-        versionCode = 7
-        versionName = "2.3.0"
+        minSdk = providers.gradleProperty("MIN_SDK_VERSION").get().toInt()
+        targetSdk = providers.gradleProperty("TARGET_SDK_VERSION").get().toInt()
+        versionCode = providers.gradleProperty("VERSION_CODE").get().toInt()
+        versionName  = providers.gradleProperty("VERSION_NAME").getOrNull().toString()
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }

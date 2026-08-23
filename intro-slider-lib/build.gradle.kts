@@ -4,10 +4,10 @@ plugins {
 
 android {
     namespace = "com.odoo.widgets.slider"
-    compileSdk = 35
+    compileSdk = providers.gradleProperty("COMPILE_SDK_VERSION").get().toInt()
 
     defaultConfig {
-        minSdk = 21
+        minSdk = providers.gradleProperty("MIN_SDK_VERSION").get().toInt()
     }
 
     buildTypes {
