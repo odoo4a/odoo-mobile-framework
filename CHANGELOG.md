@@ -1,5 +1,21 @@
 # CHANGELOG
 
+## [2.3.1](https://github.com/odoo4a/odoo-mobile-framework/compare/v2.3.0...v2.3.1) (2026-08-26)
+
+### Documentation Changes 📝
+
+* **legacy:** Added legacy changelog ([cc97fc4](https://github.com/odoo4a/odoo-mobile-framework/commit/cc97fc4e34ac8622f81f4cff411361adcaa5c584))
+* Rename LICENSE ([3a17bd0](https://github.com/odoo4a/odoo-mobile-framework/commit/3a17bd0fab91b8703e5bf847720cd25006f008a5))
+* Update README ([a0f2e50](https://github.com/odoo4a/odoo-mobile-framework/commit/a0f2e5012793672ebd59946dca30c79bbd613aba))
+
+### Code Refactor 💅
+
+* Adaptation for Java 17 ([eb22a5d](https://github.com/odoo4a/odoo-mobile-framework/commit/eb22a5dfa477578edc427dc3f024605b19e24206))
+
+### Build system 🛠️
+
+* Upgrade gradle ([3a185a7](https://github.com/odoo4a/odoo-mobile-framework/commit/3a185a7334063b0b167f1674adc7c29abed4c6e1))
+* Version and build parameters have been overridden ([c91379a](https://github.com/odoo4a/odoo-mobile-framework/commit/c91379a2e6de0eee2db6a6a9cf70685e4681aaeb))
 
 ## v2.3.0 (2016-12-21)
 
