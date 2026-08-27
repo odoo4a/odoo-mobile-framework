@@ -37,6 +37,7 @@ import com.odoo.core.orm.OModel;
 import com.odoo.core.orm.OValues;
 import com.odoo.core.orm.fields.OColumn;
 import com.odoo.core.rpc.helper.OdooFields;
+import com.odoo.core.rpc.helper.OdooVersion;
 import com.odoo.core.rpc.helper.utils.gson.OdooResult;
 import com.odoo.core.support.OdooCompatActivity;
 import com.odoo.core.utils.BitmapUtils;
@@ -51,6 +52,7 @@ public class CustomerDetails extends OdooCompatActivity
         implements View.OnClickListener, OField.IOnFieldValueChangeListener {
     public static final String TAG = CustomerDetails.class.getSimpleName();
     public static String KEY_PARTNER_TYPE = "partner_type";
+    protected OdooVersion mVersion = new OdooVersion();
     private final String KEY_MODE = "key_edit_mode";
     private final String KEY_NEW_IMAGE = "key_new_image";
     private Bundle extras;
@@ -324,11 +326,23 @@ public class CustomerDetails extends OdooCompatActivity
             try {
                 Thread.sleep(300);
                 OdooFields fields = new OdooFields();
-                fields.addAll(new String[] {"image_medium"});
-                OdooResult record = resPartner.getServerDataHelper().read(null, params[0]);
-                if (record != null && !record.getString("image_medium").equals("false")) {
-                    image = record.getString("image_medium");
+                if (mVersion.getVersionNumber() <= 11) {
+                    fields.addAll(new String[] {"image_medium"});
+                } else {
+                    fields.addAll(new String[] {"image_1920"});
                 }
+
+                OdooResult record = resPartner.getServerDataHelper().read(null, params[0]);
+                if (mVersion.getVersionNumber() <= 11) {
+                    if (record != null && !record.getString("image_medium").equals("false")) {
+                        image = record.getString("image_medium");
+                    }
+                } else {
+                    if (record != null && !record.getString("image_1920").equals("false")) {
+                        image = record.getString("image_1920");
+                    }
+                }
+
             } catch (Exception e) {
                 e.printStackTrace();
             }

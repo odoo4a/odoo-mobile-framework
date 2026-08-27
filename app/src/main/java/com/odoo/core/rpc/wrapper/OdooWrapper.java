@@ -503,7 +503,10 @@ public class OdooWrapper<T> implements Response.Listener<JSONObject> {
         if (mVersion.getVersionNumber() > 7 && response.containsKey("company_id"))
             odooSession.setCompanyId(response.getInt("company_id"));
         odooSession.setDb(response.getString("db"));
-        odooSession.setSessionId(response.getString("session_id"));
+        if (mVersion.getVersionNumber() <= 12) {
+            odooSession.setSessionId(response.getString("session_id"));
+        }
+
         odooSession.setUid(response.getInt("uid"));
         odooSession.setUserContext(response.getMap("user_context"));
         odooSession.setUsername(response.getString("username"));
@@ -637,22 +640,45 @@ public class OdooWrapper<T> implements Response.Listener<JSONObject> {
             final IOdooResponse callback,
             OdooSyncResponse backResponse) {
         try {
-            String url = serverURL + "/web/dataset/search_read";
+            String url = serverURL;
             JSONObject params = new JSONObject();
             params.put("model", model);
-            if (fields == null) {
-                fields = new OdooFields();
+            if (mVersion.getVersionNumber() <= 16) {
+                url = serverURL + "/web/dataset/search_read";
+                if (fields == null) {
+                    fields = new OdooFields();
+                }
+                params.put("fields", fields.get().getJSONArray("fields"));
+                if (domain == null) {
+                    domain = new ODomain();
+                }
+                params.put("domain", domain.getArray());
+                JSONObject context = updateCTX(odooSession.getUserContext());
+                params.put("context", context);
+                params.put("offset", offset);
+                params.put("limit", limit);
+                params.put("sort", (sort == null) ? "" : sort);
+            } else {
+                url = serverURL + "/web/dataset/call_kw";
+
+                params.put("model", model);
+                params.put("method", "search_read");
+
+                JSONArray argsArray = new JSONArray();
+                argsArray.put(domain.getArray());
+                argsArray.put(fields.get().getJSONArray("fields"));
+                params.put("args", argsArray);
+
+                JSONObject kwargs = new JSONObject();
+                kwargs.put("limit", limit);
+                kwargs.put("offset", offset);
+
+                if (sort != null && !sort.trim().isEmpty()) {
+                    kwargs.put("order", sort);
+                }
+
+                params.put("kwargs", kwargs);
             }
-            params.put("fields", fields.get().getJSONArray("fields"));
-            if (domain == null) {
-                domain = new ODomain();
-            }
-            params.put("domain", domain.getArray());
-            JSONObject context = updateCTX(odooSession.getUserContext());
-            params.put("context", context);
-            params.put("offset", offset);
-            params.put("limit", limit);
-            params.put("sort", (sort == null) ? "" : sort);
             newJSONPOSTRequest(url, params, callback, backResponse);
         } catch (Exception e) {
             OdooLog.e(e, e.getMessage());
@@ -1021,7 +1047,11 @@ public class OdooWrapper<T> implements Response.Listener<JSONObject> {
         users[0].setCompanyId(odooSession.getCompanyId());
         users[0].setHost(serverURL);
         OdooFields fields = new OdooFields();
-        fields.addAll(new String[] {"name", "partner_id", "tz", "image_medium", "company_id"});
+        if (mVersion.getVersionNumber() <= 11) {
+            fields.addAll(new String[] {"name", "partner_id", "tz", "image_medium", "company_id"});
+        } else {
+            fields.addAll(new String[] {"name", "partner_id", "tz", "image_1920", "company_id"});
+        }
         ODomain domain = new ODomain();
         domain.add("id", "=", users[0].getUserId());
 
@@ -1057,7 +1087,11 @@ public class OdooWrapper<T> implements Response.Listener<JSONObject> {
             result.putAll(items.get(0));
         }
         user.setName(result.getString("name"));
-        user.setAvatar(result.getString("image_medium"));
+        if (mVersion.getVersionNumber() <= 11) {
+            user.setAvatar(result.getString("image_medium"));
+        } else {
+            user.setAvatar(result.getString("image_1920"));
+        }
         user.setTimezone(result.getString("tz"));
         Double partner_id = (Double) result.getArray("partner_id").get(0);
         Double company_id = (Double) result.getArray("company_id").get(0);

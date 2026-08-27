@@ -24,6 +24,7 @@ It has pre-developed services, providers, controls and more other features to ma
 
 ## SUPPORTED ODOO VERSIONS
 
+- [x] Odoo 17.0 (need to test)
 - [x] Odoo 11.0
 - [x] Odoo 10.0
 - [x] Odoo 9.0

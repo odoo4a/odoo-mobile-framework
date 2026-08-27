@@ -39,7 +39,7 @@ public class ResPartner extends OModel {
 
     OColumn name = new OColumn("Name", OVarchar.class).setSize(100).setRequired();
     OColumn is_company = new OColumn("Is Company", OBoolean.class).setDefaultValue(false);
-    OColumn image_small = new OColumn("Avatar", OBlob.class).setDefaultValue(false);
+    // OColumn image_small = new OColumn("Avatar", OBlob.class).setDefaultValue(false);
     OColumn street = new OColumn("Street", OVarchar.class).setSize(100);
     OColumn street2 = new OColumn("Street2", OVarchar.class).setSize(100);
     OColumn city = new OColumn("City", OVarchar.class);
@@ -57,8 +57,8 @@ public class ResPartner extends OModel {
     OColumn state_id = new OColumn("State", ResCountryState.class, OColumn.RelationType.ManyToOne);
 
     OColumn country_id = new OColumn("Country", ResCountry.class, OColumn.RelationType.ManyToOne);
-    OColumn customer = new OColumn("Customer", OBoolean.class).setDefaultValue("true");
-    OColumn supplier = new OColumn("Supplier", OBoolean.class).setDefaultValue("false");
+    // OColumn customer = new OColumn("Customer", OBoolean.class).setDefaultValue("true");
+    // OColumn supplier = new OColumn("Supplier", OBoolean.class).setDefaultValue("false");
     OColumn comment = new OColumn("Internal Note", OText.class);
 
     @Odoo.Functional(
