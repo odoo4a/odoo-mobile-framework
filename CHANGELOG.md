@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## [2.4.0](https://github.com/odoo4a/odoo-mobile-framework/compare/v2.3.1...v2.4.0) (2026-08-27)
+
+### New Feature(s) 🚀
+
+* Remove internal gson ([d698118](https://github.com/odoo4a/odoo-mobile-framework/commit/d6981182af9f3f61994adbd7995026782b1560a8))
+
+### Documentation Changes 📝
+
+* Tested with Odoo 11.0 ([80a8855](https://github.com/odoo4a/odoo-mobile-framework/commit/80a8855bdddbae99bb28491dbf84deb3efb7070e))
+
 ## [2.3.1](https://github.com/odoo4a/odoo-mobile-framework/compare/v2.3.0...v2.3.1) (2026-08-26)
 
 ### Documentation Changes 📝
