@@ -37,9 +37,9 @@
 * Upgrade gradle ([3a185a7](https://github.com/odoo4a/odoo-mobile-framework/commit/3a185a7334063b0b167f1674adc7c29abed4c6e1))
 * Version and build parameters have been overridden ([c91379a](https://github.com/odoo4a/odoo-mobile-framework/commit/c91379a2e6de0eee2db6a6a9cf70685e4681aaeb))
 
-## [2.3.1](https://github.com/odoo4a/odoo-mobile-framework/compare/v1.0.0...v2.3.0)(2016-12-21)
+## [2.3.0](https://github.com/odoo4a/odoo-mobile-framework/compare/v1.0.0...v2.3.0) (2016-12-21)
 
-### Bug Fixes
+### Bug Fix(es) 🐛️
 
 - Account remove issue
   ([`154c07d`](https://github.com/odoo4a/odoo-mobile-framework/commit/154c07d823baef0ff7d8157f7704352bca9ccd0f))
@@ -193,7 +193,7 @@
 - **Selection Field**: Error when default value not set in readonly mode. Ref Issue: #145
   ([`6aa86cd`](https://github.com/odoo4a/odoo-mobile-framework/commit/6aa86cd2f93b5ad450778483c8f013d31525a0c3))
 
-### Features
+### New Feature(s) 🚀
 
 - INIT Projecty
   ([`4312662`](https://github.com/odoo4a/odoo-mobile-framework/commit/43126620b7cbe0ed093b29a5e8308dbf26b97b22))
@@ -423,7 +423,7 @@
 - **added additional methods for OModel**: Sync() and getContext() -> #144
   ([`489e0e1`](https://github.com/odoo4a/odoo-mobile-framework/commit/489e0e150bee223b43566e3b93ec2525995b70e4))
 
-### Improvements
+### Improvements 📈
 
 - Account setting improved and font set to default
   ([`4aadd1f`](https://github.com/odoo4a/odoo-mobile-framework/commit/4aadd1fa2c0bdafea823a842741778c8b99f5533))
@@ -1271,12 +1271,12 @@
   check manytoone related record in binary image
   ([`992597e`](https://github.com/odoo4a/odoo-mobile-framework/commit/992597e199d13b193870b36fa24534ad5d7a0b3f))
 
-### Refactoring
+### Code Refactor 💅
 
 - Refactore parallax library using support design library
   ([`a44abf6`](https://github.com/odoo4a/odoo-mobile-framework/commit/a44abf6d8622de15bea3a0bd222678cd59fc1d3d))
 
-### Removals
+### Removals 🧹
 
 - Removed extra commented code
   ([`6147c45`](https://github.com/odoo4a/odoo-mobile-framework/commit/6147c45f8be6d16b365f54d902bf08813ac1932d))
