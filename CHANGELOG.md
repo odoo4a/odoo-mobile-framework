@@ -37,7 +37,7 @@
 * Upgrade gradle ([3a185a7](https://github.com/odoo4a/odoo-mobile-framework/commit/3a185a7334063b0b167f1674adc7c29abed4c6e1))
 * Version and build parameters have been overridden ([c91379a](https://github.com/odoo4a/odoo-mobile-framework/commit/c91379a2e6de0eee2db6a6a9cf70685e4681aaeb))
 
-## v2.3.0 (2016-12-21)
+## [2.3.1](https://github.com/odoo4a/odoo-mobile-framework/compare/v1.0.0...v2.3.0)(2016-12-21)
 
 ### Bug Fixes
 
@@ -175,7 +175,7 @@
 - **framework**: Fix timeout requestSync / auth
   ([`5521812`](https://github.com/odoo4a/odoo-mobile-framework/commit/552181277fdacbf549f7b0631366fbe0bee2f8ac))
 
-- **https**: //github.com/Odoo-mobile/framework/issues/245
+- Fixed Odoo 10.0 wrong username password crash
   ([`606213b`](https://github.com/odoo4a/odoo-mobile-framework/commit/606213badb702f171313f9125b9ab92f5a5ee0b8))
 
 - **manyToOne**: Not able to update record on server if many to one column has null value.
@@ -195,7 +195,7 @@
 
 ### Features
 
-- : INIT Projecty
+- INIT Projecty
   ([`4312662`](https://github.com/odoo4a/odoo-mobile-framework/commit/43126620b7cbe0ed093b29a5e8308dbf26b97b22))
 
 - Add about company details
@@ -420,7 +420,7 @@
 - Sync res.partner with android contacts
   ([`d6db040`](https://github.com/odoo4a/odoo-mobile-framework/commit/d6db0407d5f9bb8a2169fffae2a2e67b9ff6afca))
 
-- **added additional methods for OModel **: Sync() and getContext() -> #144
+- **added additional methods for OModel**: Sync() and getContext() -> #144
   ([`489e0e1`](https://github.com/odoo4a/odoo-mobile-framework/commit/489e0e150bee223b43566e3b93ec2525995b70e4))
 
 ### Improvements
@@ -1254,7 +1254,7 @@
 - Widget mechanism improved for updation
   ([`4e46985`](https://github.com/odoo4a/odoo-mobile-framework/commit/4e4698513a8a852690e99286a5d9575965dea989))
 
-- **improved sync domain, OField **: Check for no record for image widget
+- **improved sync domain, OField**: Check for no record for image widget
   ([`007ab85`](https://github.com/odoo4a/odoo-mobile-framework/commit/007ab85121e59fa61c5d043b37edb47a9b4905ec))
 
 - **odoo-rpc-v3**: Updated library, fixed V9+ sync issue
@@ -1267,7 +1267,7 @@
   records
   ([`90c2874`](https://github.com/odoo4a/odoo-mobile-framework/commit/90c287443a6487482b71cbe6654abd7f0b02b50a))
 
-- **orm **: Improved sync service with limiting data, [FIX] controls : updated field control for
+- **orm**: Improved sync service with limiting data, [FIX] controls : updated field control for
   check manytoone related record in binary image
   ([`992597e`](https://github.com/odoo4a/odoo-mobile-framework/commit/992597e199d13b193870b36fa24534ad5d7a0b3f))
 
