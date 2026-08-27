@@ -47,6 +47,7 @@ dependencies {
     implementation(fileTree("libs") { include("*.jar") })
     //
     implementation(libs.appcompat)
+    implementation(libs.gson)
     implementation(libs.material)
     implementation(libs.swiperefreshlayout)
     implementation(libs.volley)
