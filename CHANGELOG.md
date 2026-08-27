@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## [2.5.0](https://github.com/odoo4a/odoo-mobile-framework/compare/v2.4.0...v2.5.0) (2026-08-27)
+
+### New Feature(s) 🚀
+
+* Support Odoo 17.0 ([0a3a022](https://github.com/odoo4a/odoo-mobile-framework/commit/0a3a022f531eead7a4b584e93cbaf76e2779b980))
+
+### Build system 🛠️
+
+* Update .gitignore ([64327e5](https://github.com/odoo4a/odoo-mobile-framework/commit/64327e512c56b823f73fdbc9c4431debd310f5cc))
+
 ## [2.4.0](https://github.com/odoo4a/odoo-mobile-framework/compare/v2.3.1...v2.4.0) (2026-08-27)
 
 ### New Feature(s) 🚀
